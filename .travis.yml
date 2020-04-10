@@ -4,3 +4,6 @@ services:
 
 before_install:
   - docker build -t cofc/docker-react-grider-public -f Dockerfile.dev
+
+script:
+  - docker run -e CI=true cofc/docker-react-grider-public npm run test
