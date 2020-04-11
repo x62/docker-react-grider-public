@@ -15,8 +15,8 @@ deploy:
   env: "DockerReactGriderPublic-env"
   bucket_name: "elasticbeanstalk-us-east-2-880874484397"
   bucket_path: "docker-react-grider-public"
-  on:
-    branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
-    secure: $AWS_SECRET_KEY
+    secure: "$AWS_SECRET_KEY"
+  on:
+    branch: master
