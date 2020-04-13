@@ -12,8 +12,8 @@ deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-react-grider-public"
-  env: "DockerReactGriderPublic-env"
-  bucket_name: "elasticbeanstalk-us-east-2-880874484397"
+  env: DockerReactGriderPublic-env
+  bucket_name: elasticbeanstalk-us-east-2-880874484397
   bucket_path: "docker-react-grider-public"
   on:
     branch: master
