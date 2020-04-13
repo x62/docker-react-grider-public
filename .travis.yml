@@ -7,16 +7,16 @@ before_install:
   - docker build -t cofc/docker-react-grider-public -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true cofc/docker-react-grider-public npm run test
+  - docker run -e CI=true cofc/docker-react-grider-public npm run test -- --watchAll=false
 
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-react-grider-public"
-  env: DockerReactGriderPublic-env
-  bucket_name: elasticbeanstalk-us-east-2-880874484397
+  env: "DockerReactGriderPublic-env"
+  bucket_name: "elasticbeanstalk-us-east-2-880874484397"
   bucket_path: "docker-react-grider-public"
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY'
